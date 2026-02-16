@@ -1,174 +1,355 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Two-Column Layout</title>
-    <style>
-      :root {
-        --bg: #f6f4ef;
-        --ink: #1f1f1f;
-        --panel: #ffffff;
-        --border: #1f1f1f;
-        --accent: #f2c94c;
-        --shadow: 4px 4px 0 #1f1f1f;
-      }
 
-      * {
-        box-sizing: border-box;
-      }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furframe Studio - Premium Pet Supplies</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-      body {
-        margin: 0;
-        font-family: "Trebuchet MS", "Segoe UI", sans-serif;
-        color: var(--ink);
-        background: radial-gradient(circle at top left, #ffffff 0%, var(--bg) 60%);
-        padding: 32px;
-      }
-
-      .page {
-        max-width: 960px;
-        margin: 0 auto;
-        background: var(--panel);
-        border: 3px solid var(--border);
-        border-radius: 18px;
-        padding: 24px;
-        box-shadow: var(--shadow);
-      }
-
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 8px 4px 20px;
-        border-bottom: 2px solid var(--border);
-        margin-bottom: 20px;
-      }
-
-      header span {
-        font-size: 28px;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-      }
-
-      nav {
-        display: flex;
-        gap: 16px;
-        font-weight: 600;
-      }
-
-      nav a {
-        color: var(--ink);
-        text-decoration: none;
-        padding: 6px 10px;
-        border: 2px solid transparent;
-      }
-
-      nav a:hover {
-        border-color: var(--ink);
-        background: var(--accent);
-      }
-
-      main {
-        display: flex;
-        gap: 16px;
-      }
-
-      section,
-      aside {
-        background: var(--panel);
-        border: 2px solid var(--border);
-        border-radius: 14px;
-        padding: 16px;
-        box-shadow: 2px 2px 0 var(--border);
-      }
-
-      section {
-        flex-grow: 1;
-      }
-
-      aside {
-        max-width: 300px;
-      }
-
-      h1 {
-        margin: 0 0 12px;
-        font-size: 22px;
-      }
-
-      p {
-        margin: 0 0 10px;
-        line-height: 1.6;
-      }
-
-      footer {
-        width: 100%;
-        margin-top: 20px;
-        padding: 12px 16px;
-        border: 2px solid var(--border);
-        border-radius: 12px;
-        background: #fff7e0;
-        box-shadow: 2px 2px 0 var(--border);
-        font-weight: 600;
-      }
-
-      @media (max-width: 700px) {
-        body {
-          padding: 20px;
-        }
-
-        header {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 12px;
-        }
-
-        main {
-          flex-direction: column;
-        }
-
-        aside {
-          max-width: 100%;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="page">
-      <header>
-        <span>Site Title</span>
-        <nav>
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
+<body>
+   
+    <div id="sidebarMenu" class="sidebar-menu">
+        <div class="sidebar-header">
+            <button id="closeSidebar" class="close-sidebar">×</button>
+        </div>
+        <nav class="sidebar-nav">
+            <h3>ALL</h3>
+            <ul>
+                <li><a href="#" data-category="walk-kit">Walk Kit</a></li>
+                <li><a href="#" data-category="harness">Harness</a></li>
+                <li><a href="#" data-category="collar">Collar</a></li>
+                <li><a href="#" data-category="leash">Leash</a></li>
+                <li><a href="#" data-category="treat-pouch">Treat Pouch</a></li>
+                <li><a href="#" data-category="flag">Flag</a></li>
+                <li><a href="#" data-category="poop-bags">Poop Bags</a></li>
+                <li><a href="#" data-category="custom-tag">Custom Dog Tag</a></li>
+            </ul>
         </nav>
-      </header>
-
-      <main>
-        <section>
-          <h1>Left Column</h1>
-          <p>
-            This is the main content area. Add your most important information here so
-            it takes up most of the space.
-          </p>
-          <p>
-            Use multiple paragraphs to make it feel realistic. You can talk about
-            your project, your goals, or anything you want.
-          </p>
-        </section>
-
-        <aside>
-          <h1>Right Column</h1>
-          <p>
-            This sidebar can hold extra details, links, or callouts. Keep it compact
-            so the main section stays dominant.
-          </p>
-        </aside>
-      </main>
-
-      <footer>
-        <p>Footer content...</p>
-      </footer>
     </div>
-  </body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <button id="hamburgerBtn" class="hamburger-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="logo">Furframe Studio</div>
+                <nav class="main-nav">
+                    <a href="#home">Home</a>
+                    <a href="#shop">Shop</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <div class="cart-icon">
+                    <img src="./images/ShoppingCart.png" alt="Shopping Cart">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav id="breadcrumbNav" class="breadcrumb-nav">
+        <div class="container">
+            <span class="breadcrumb-item">Home</span>
+            <span class="breadcrumb-separator">></span>
+            <span id="breadcrumbCategory" class="breadcrumb-item">Pet Base T-shirt</span>
+        </div>
+    </nav>
+
+    <div id="mainContent" class="main-content">
+        <main>
+            <section id="home" class="hero-section">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Play Dirty,<br>Live Stylish</h1>
+                        <p>Discover our 2024 collection of premium pet accessories designed for modern pets who love to
+                            play and look fabulous. From everyday essentials to stylish statement pieces.</p>
+                        <p>Every product is crafted with your pet's comfort and your lifestyle in mind. Because your
+                            furry friend deserves the best.</p>
+                        <button class="cta-button">Shop Now</button>
+                    </div>
+                    <div class="hero-image">
+                        <img src="./images/banner.png" alt="Colorful pet harnesses collection hanging display">
+                    </div>
+                </div>
+            </section>
+
+            <section class="concept-2024">
+                <div class="container">
+                    <div class="concept-2024-content">
+                        <div class="concept-left">
+                            <div class="concept-year-large">2024</div>
+                            <div class="concept-message">
+                                <div class="green-bar"></div>
+                                <div class="concept-text">
+                                    <p>Make Life with Your Dog Look as Good as It Feels</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-product-card product-card-1">
+                            <img src="./images/20243.png" alt="Biscuit Cotton Vest Pink">
+                            <div class="product-card-info">
+                                <div class="product-card-text">
+                                    <p class="product-card-name">Biscuit Cotton Vest Pink</p>
+                                    <p class="product-card-price">$108.00</p>
+                                </div>
+                                <button class="product-card-cart" aria-label="Add to cart">
+                                    <img src="./images/ShoppingCart.png" alt="Add to cart">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="concept-product-card product-card-2">
+                            <img src="./images/20241.png" alt="Biscuit Cotton Vest Green">
+                            <div class="product-card-info">
+                                <div class="product-card-text">
+                                    <p class="product-card-name">Biscuit Cotton Vest Green</p>
+                                    <p class="product-card-price">$108.00</p>
+                                </div>
+                                <button class="product-card-cart" aria-label="Add to cart">
+                                    <img src="./images/ShoppingCart.png" alt="Add to cart">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="concept-product-card product-card-3">
+                            <img src="./images/20242.png" alt="Biscuit Cotton Vest Blue">
+                            <div class="product-card-info">
+                                <div class="product-card-text">
+                                    <p class="product-card-name">Biscuit Cotton Vest Blue</p>
+                                    <p class="product-card-price">$108.00</p>
+                                </div>
+                                <button class="product-card-cart" aria-label="Add to cart">
+                                    <img src="./images/ShoppingCart.png" alt="Add to cart">
+                                </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="shop" class="top-picks">
+                <div class="container">
+                    <h2>TOP PICKS</h2>
+                    <p>Our most popular items that pets and owners love. Hand-picked for quality, style, and
+                        functionality.</p>
+                    <div id="topPicksGrid" class="product-grid"></div>
+                </div>
+            </section>
+            <section id="about" class="brand-concept">
+                <div class="container">
+                    <div class="concept-content">
+                        <div class="concept-text">
+                            <h2>BRAND CONCEPT</h2>
+                            <p>At Furframe Studio, we believe that pet accessories should be as stylish as they are
+                                functional. Our 2024 collection represents a perfect blend of modern design and
+                                practical innovation.</p>
+                            <p>We understand that your pet is part of your family, and their accessories should reflect
+                                your lifestyle. That's why every piece is thoughtfully designed to complement both your
+                                pet's personality and your aesthetic preferences.</p>
+                            <p>
+                                Our products are easy to clean, hard to destroy, and up for any challenge. 
+                                So go ahead, let your dog be their wildest, most playful, 
+                                andmessy selves this year-because their style won't fade in the wash.
+                            </p>
+                            <div class="concept-year">2024</div>
+                        </div>
+                        <div class="concept-image">
+                            <img src="./images/image 38.png" alt="Pet wearing stylish harness outdoors with umbrella">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="daily-essentials">
+                <div class="container">
+                    <h2>DAILY ESSENTIALS</h2>
+                    <p>Everything your pet needs for daily adventures and comfort at home.</p>
+                    <div id="essentialsGrid" class="product-grid"></div>
+                </div>
+            </section>
+
+            <section id="contact" class="newsletter">
+                <div class="container">
+                    <h2>Stay Updated</h2>
+                    <p>Subscribe to our newsletter for exclusive offers and new arrivals.</p>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <input type="email" id="emailInput" name="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="productDetailPage" class="product-detail-page hidden">
+        <header class="main-header">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <button id="hamburgerBtnDetail" class="hamburger-btn" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="logo">Furframe Studio</div>
+                    <nav class="main-nav">
+                        <a href="#" id="homeNavDetail">Home</a>
+                        <a href="#" id="shopNavDetail">Shop</a>
+                        <a href="#" id="aboutNavDetail">About</a>
+                        <a href="#" id="contactNavDetail">Contact</a>
+                    </nav>
+                    <div class="cart-icon">
+                        <span>🛒</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="breadcrumb-nav">
+            <div class="container">
+                <a href="#" id="breadcrumbHomeLink" class="breadcrumb-item breadcrumb-link">Home</a>
+                <span class="breadcrumb-separator">></span>
+                <span id="breadcrumbProductName" class="breadcrumb-item">Product</span>
+            </div>
+        </nav>
+
+        <section id="productDetail" class="product-detail">
+            <div class="container">
+                <button id="closeDetail" class="close-button">← Back</button>
+                <div class="detail-content">
+                    <div class="detail-images">
+                        <div class="main-image">
+                            <img id="detailMainImage" src="./images/example1.png" alt="Product main view">
+                        </div>
+                        <div class="thumbnail-gallery">
+                            <img class="thumbnail active" data-index="0" src="./images/picks1.png"
+                                alt="Product view 1">
+                            <img class="thumbnail" data-index="1" src="./images/picks2.png" alt="Product view 2">
+                            <img class="thumbnail" data-index="2" src="./images/picks3.png" alt="Product view 3">
+                            <img class="thumbnail" data-index="3" src="./images/picks4.png" alt="Product view 4">
+                        </div>
+                    </div>
+                    <div class="detail-info">
+                        <h2 id="detailProductName">Product Name</h2>
+                        <div class="price" id="detailPrice">$29.99</div>
+
+                        <div class="product-description">
+                            <h3>Description</h3>
+                            <p id="detailDescription">Premium quality pet accessory designed for comfort and style.</p>
+                        </div>
+
+                        <div class="color-selection">
+                            <h3>Select Color</h3>
+                            <div id="colorOptions" class="color-options"></div>
+                        </div>
+
+                        <div class="size-selection">
+                            <h3>Select Size</h3>
+                            <div id="sizeOptions" class="size-options"></div>
+                        </div>
+
+                        <div class="size-chart">
+                            <h3>Size Chart</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Size</th>
+                                        <th>Chest (cm)</th>
+                                        <th>Neck (cm)</th>
+                                        <th>Weight (kg)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>S</td>
+                                        <td>30-40</td>
+                                        <td>20-28</td>
+                                        <td>2-5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>M</td>
+                                        <td>40-55</td>
+                                        <td>28-38</td>
+                                        <td>5-12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>L</td>
+                                        <td>55-70</td>
+                                        <td>38-48</td>
+                                        <td>12-25</td>
+                                    </tr>
+                                    <tr>
+                                        <td>XL</td>
+                                        <td>70-85</td>
+                                        <td>48-58</td>
+                                        <td>25-40</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="product-features">
+                            <h3>Key Features</h3>
+                            <ul id="featuresList">
+                                <li>Premium quality materials</li>
+                                <li>Adjustable and comfortable fit</li>
+                                <li>Easy to clean and maintain</li>
+                                <li>Durable construction</li>
+                            </ul>
+                        </div>
+
+                        <form id="orderForm" class="order-form">
+                            <div class="quantity-selector">
+                                <label for="quantity">Quantity:</label>
+                                <div class="quantity-controls">
+                                    <button type="button" id="decreaseQty">-</button>
+                                    <input type="number" id="quantity" name="quantity" value="1" min="1" max="10"
+                                        readonly>
+                                    <button type="button" id="increaseQty">+</button>
+                                </div>
+                            </div>
+                            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="related-products">
+                    <h2>Related products</h2>
+                    <div id="relatedProductsGrid" class="product-grid"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+                    <img src="./images/Facebook.png" alt="Facebook">
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">
+                    <img src="./images/x.png" alt="X (Twitter)">
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+                    <img src="./images/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <img src="./images/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+            <p>&copy; 2024 furframe Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top hidden" aria-label="Back to top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+
 </html>
