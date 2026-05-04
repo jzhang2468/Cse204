@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Japan Architecture Atlas</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-logo">
+            <div class="logo-circle">JA</div>
+            <div class="logo-text">
+                <p>Japan Architecture Atlas</p>
+                <p>Map archive / visual index</p>
+            </div>
+        </div>
+    </nav>
+
+    <section class="filter-bar">
+        <label class="search-label">
+            <span style="font-size:0.875rem;color:#737373">⌕</span>
+            <input type="text" id="search-input" placeholder="Search architect, project, region, type..." />
+        </label>
+        <div class="select-pill arch-pill" id="arch-pill">
+            <span class="select-label">Architect</span>
+            <button class="arch-select-btn" id="arch-select-btn">All</button>
+            <div class="arch-dropdown" id="arch-dropdown"></div>
+        </div>
+        <div class="architect-popup" id="architect-popup"></div>
+        <div class="select-pill">
+            <span class="select-label">Region</span>
+            <select id="select-region"></select>
+        </div>
+        <div class="select-pill">
+            <span class="select-label">Type</span>
+            <select id="select-type"></select>
+        </div>
+    </section>
+
+    <div class="main-grid">
+        <section class="map-section">
+            <div class="map-inner globe-off" id="map-inner">
+                <div id="map-leaflet"></div>
+            </div>
+            <div class="map-headline">
+                <p class="map-headline-eyebrow">Japan / Architecture / Authorship</p>
+                <h1 class="map-headline-title">Read Japan as<br>a field of<br>interventions.</h1>
+            </div>
+        </section>
+
+    </div>
+
+    <section class="index-grid" id="index-grid"></section>
+
+    <aside class="project-card" id="project-card">
+        <div class="card-image">
+            <img id="card-img" src="" alt="" />
+            <button class="card-close" id="card-close" aria-label="Close card">&#215;</button>
+            <div class="card-badge" id="card-badge"></div>
+        </div>
+        <div class="card-body">
+            <div class="card-title-row">
+                <div>
+                    <p class="card-type" id="card-type"></p>
+                    <h2 class="card-name" id="card-name"></h2>
+                </div>
+                <a class="card-arrow" id="card-arrow-link" href="#" target="_blank">&#8599;</a>
+            </div>
+            <div class="card-meta">
+                <div class="meta-box">
+                    <p class="meta-label">Architect</p>
+                    <p class="meta-value" id="card-architect"></p>
+                </div>
+                <div class="meta-box">
+                    <p class="meta-label">Location</p>
+                    <p class="meta-value" id="card-city"></p>
+                </div>
+                <div class="meta-box">
+                    <p class="meta-label">Latitude</p>
+                    <p class="meta-value" id="card-lat"></p>
+                </div>
+                <div class="meta-box">
+                    <p class="meta-label">Longitude</p>
+                    <p class="meta-value" id="card-lon"></p>
+                </div>
+            </div>
+            <p class="card-note" id="card-note"></p>
+            <div class="card-weather" id="card-weather">
+                <div class="card-weather-emoji" id="card-weather-emoji">⏳</div>
+                <div class="card-weather-info">
+                    <div class="card-weather-temp" id="card-weather-temp">—</div>
+                    <div class="card-weather-desc" id="card-weather-desc">Fetching weather…</div>
+                </div>
+                <div class="card-weather-humidity" id="card-weather-humidity"></div>
+            </div>
+            <div class="card-footer">
+                <span id="card-footer-weather">Live Weather</span>
+                <span>OpenWeatherMap API</span>
+            </div>
+        </div>
+    </aside>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./main.js"></script>
+    <script src="./cursor.js"></script>
+</body>
+
+</html>
